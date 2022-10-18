@@ -1,3 +1,22 @@
+// SWITCH
+
+const stars = 3;
+
+let price;
+
+switch (stars) {
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+  case 5:
+    console.log('Ok');
+    break;
+  default:
+    console.log('Error!');
+}
+
+console.log(price);
 /*
  * Напиши скрипт выбора стоимости отеля по кол-ву звёзд.
  * 1 - 20$, 2 - 30$, 3 - 50$, 4 - 70$, 5 - 120$
@@ -5,33 +24,6 @@
  * Если в переменной stars что-то кроме чисел 1-5, выведи строку
  * 'Такого кол-ва звезд нет'
  */
-
-let stars = 1;
-let price;
-
-switch (stars) {
-  case 1:
-    price = '20$';
-    break;
-  case 2:
-    price = '30$';
-    break;
-  case 3:
-    price = '50$';
-    break;
-  case 4:
-    price = '70$';
-    break;
-  case 5:
-    price = '120$';
-    break;
-  default:
-    console.log('Такого кол-ва звезд нет');
-}
-
-if (price) {
-  console.log(`Вартість отелю - ${price}`);
-}
 
 /*
  * Напиши скрипт выбора стоимости отеля по кол-ву звёзд.
