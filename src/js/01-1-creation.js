@@ -12,6 +12,42 @@
 Доступ до властивостей об'єкта в методах
 */
 
+const user = {
+  phoneNumber: 'awdawd1',
+  age: 23,
+  name: 'Volodymyr',
+  adress: {
+    street: '',
+    city: '',
+    country: 'Ukraine',
+  },
+
+  sayHello() {
+    this.phoneNumber = 'new Value';
+    this.newKey = 'new Value';
+    delete this.name;
+  },
+};
+
+user.sayHello();
+delete user.phoneNumber;
+console.log(user);
+
+/* 
+user.name = 'new Name';
+
+user['name2'] = 'test';
+
+const name = 123;
+const key = 'phone';
+
+const arr = [];
+for (let i = 0; i < 3; i++) {
+  user[i] = 'new Value';
+  arr[i];
+} 
+*/
+
 /*
  * Ссылочный тип {} === {}
  */

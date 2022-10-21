@@ -13,8 +13,21 @@ const playlist = {
   name: 'Мой супер плейлист',
   rating: 5,
   tracks: ['трек-1', 'трек-2', 'трек-3'],
+
+  changeName(newName) {
+    this.name = newName;
+  },
+  addTrack(track) {
+    return this.tracks.push(track);
+  },
+  getTrackCount() {
+    return this.tracks.length;
+  },
+  updateRating(newRating) {
+    this.rating = newRating;
+  },
 };
-/* 
+
 console.log(playlist.getTrackCount());
 
 playlist.changeName('Новое имя');
@@ -22,10 +35,12 @@ playlist.changeName('Новое имя');
 playlist.addTrack('новый трек 1');
 console.log(playlist.getTrackCount());
 
-playlist.addTrack('новый трек 2');
-console.log(playlist.getTrackCount());
+console.log(playlist.addTrack('новый трек 2'));
+
+playlist.updateRating(3);
+
+console.log(playlist);
 
 playlist.updateRating(4);
 
 console.log(playlist);
- */
