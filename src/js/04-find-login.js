@@ -5,8 +5,19 @@
  */
 
 const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+const logins1 = [];
 
-console.log(findLogin(logins, 'avocod3r'));
-console.log(findLogin(logins, 'k1widab3st'));
-console.log(findLogin(logins, 'jam4l'));
-console.log(findLogin(logins, 'poly1scute'));
+const findLogin = function (allLogins, loginToFind) {
+  for (const login of allLogins) {
+    if (login === loginToFind) {
+      console.log(` Пользователь ${loginToFind} найден.`);
+      return;
+    }
+  }
+  console.log(`Пользователь ${loginToFind} не найден.`);
+};
+
+findLogin(logins1, 'avocod3r');
+findLogin(logins1, 'k1widab3st');
+findLogin(logins1, 'jam4l');
+findLogin(logins1, 'poly1scute');
