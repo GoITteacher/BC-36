@@ -1,5 +1,6 @@
 /*
  * Перебор через for...in и Object.keys|values|entries
+ * метод hasOwnProperty
  */
 
 let feed = {
@@ -10,13 +11,5 @@ let feed = {
 
 let feedback = Object.create(feed);
 feedback.test = 'myTest';
-
-// for (let key of Object.keys(feedback)) {
-//   console.log(feedback[key]);
-// }
-
-// for (let key in feedback) {
-//   if (feedback.hasOwnProperty(key)) console.log(feedback[key]);
-// }
 
 let totalFeedback = 0;

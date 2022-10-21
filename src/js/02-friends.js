@@ -17,20 +17,11 @@ console.table(friends);
 
 let friendName = 'Mango';
 
-console.log('---------------');
-for (let friend of friends) {
-  if (friend.name === friendName) console.log(friend);
-}
-
 /*
  * Получаем имена всех друзей
  */
 
 let friendsName = [];
-for (let friend of friends) {
-  friendsName.push(friend.name);
-}
-console.log(friendsName);
 
 /*
  * Получаем имена только друзей которые онлайн
@@ -38,11 +29,6 @@ console.log(friendsName);
 
 let onlineFriendsName = [];
 let offlineFriendsName = [];
-for (let friend of friends) {
-  if (friend.online) onlineFriendsName.push(friend.name);
-  else offlineFriendsName.push(friend.name);
-}
+
 console.log(onlineFriendsName);
 console.log(offlineFriendsName);
-// создать 2 массива онлайн и офлайн?
-// если тру - в первый, если нет - во второй

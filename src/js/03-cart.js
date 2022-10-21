@@ -16,34 +16,6 @@
 
 const cart = {
   items: [],
-  getItems() {
-    return this.items;
-  },
-  add(product) {
-    this.items.push(product);
-  },
-  remove(productName) {
-    for (let i = 0; i < this.items.length; i++) {
-      if (this.items[i].name === productName) {
-        this.items.splice(i, 1);
-        break;
-      }
-    }
-  },
-  clear() {
-    this.items = [];
-  },
-  getTotalPrice() {
-    let totalPrice = 0;
-
-    for (let item of this.items) {
-      totalPrice += item.price;
-    }
-
-    return totalPrice;
-  },
-  increaseQuantity(productName) {},
-  decreaseQuantity(productName) {},
 };
 
 cart.add({ name: '🍎', price: 50 });
