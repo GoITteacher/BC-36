@@ -3,11 +3,10 @@
  * - Array.prototype.concat() и аналог через spread
  */
 
-/* const array = [1, 2, 5, 7, 2, 7];
+const array = [1, 2, 5, 7, 2, 7];
 const array1 = [1, 2, 3, 4];
-//const newArray = array.concat([10], array1);
-const newArray = [...array, '---------', ...array1];
-console.log(newArray); */
+const newArray = array.concat([10], array1);
+console.log(newArray);
 
 /*
  * Поиск самой маленькой или большой температуры (числа)
@@ -38,7 +37,7 @@ console.log('b: ', b); */
 const currentTemps = [4, 5, 6];
 const nextWeekTemps = [7, 8, 9];
 
-const allTemps = [...lastWeekTemps, ...currentTemps, ...nextWeekTemps];
+const allTemps = [];
 console.log(allTemps); */
 
 /*
@@ -52,13 +51,6 @@ const b = { x: 0, z: 3 };
 //const c = Object.assign({ name: 'Mango' }, a, b);
 //console.log(c);
 
-// const c = {
-//   name: 'Mango',
-//   ...a,
-//   x: 1000,
-//   ...b,
-// };
-
 // console.log(c);
 
 // const defaultSettings = {
@@ -70,27 +62,4 @@ const b = { x: 0, z: 3 };
 // const userSettings = {};
 
 // const finalSettings = {
-//   ...defaultSettings,
-//   ...userSettings,
 // };
-
-// console.log(finalSettings);
-
-/* const user = {
-  name: 'Default',
-  surname: 'Default',
-  phoneNumber: 'Default',
-};
-
-const userData = {
-  name: 'Volodka',
-  surname: 'awdawdaw',
-};
-
-const resultUser = {
-  ...user,
-  ...userData,
-};
-
-console.log(resultUser);
- */

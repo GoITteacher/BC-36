@@ -1,7 +1,7 @@
 const profiles = [];
 
 for (let i = 0; i < 10; i++) {
-  profiles.push({
+  const user = {
     name: 'Volodka',
     tag: 'gmail.com',
     location: 'Ocho Rios, Jamaica',
@@ -11,7 +11,9 @@ for (let i = 0; i < 10; i++) {
       views: 4827,
       likes: 1308,
     },
-  });
+  };
+
+  profiles.push(user);
 }
 
 console.log(profiles);
@@ -26,13 +28,13 @@ const makeProfileMarkup = function (userProfile) {
   } = userProfile;
 
   return `<div>
-    <img src="${avatar}" alt="user avatar">
-    <p>${name}<span>@${tag}</span></p>
-    <p>Location: ${location}</p>
+    <img src=" avatar " alt="user avatar">
+    <p> name <span> @tag </span></p>
+    <p>Location: location </p>
     <ul>
-      <li>Followers: ${followers}</li>
-      <li>Views: ${views}</li>
-      <li>Likes: ${likes}</li>
+      <li>Followers: followers</li>
+      <li>Views: views </li>
+      <li>Likes: likes </li>
     </ul>
   </div>`;
 };

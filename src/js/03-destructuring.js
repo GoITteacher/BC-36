@@ -13,21 +13,7 @@
 //   year: null,
 // };
 
-//const name = 'Program';
-
-//const { lastName = 'Default' } = playlist;
-//const lastName = playlist.lastName ?? 'Default';
-
-//const { lastName: newLastName = 'Default'} = playlist;
-
-/* const {
-  name1: newName,
-  year = 2000,
-  lastName: newLastName = 'Default',
-  trackCount,
-} = playlist;
-
-console.log(newLastName); */
+console.log(newLastName);
 
 /*
  * Глубокая деструктуризация
@@ -49,14 +35,9 @@ console.log(newLastName); */
  * Деструктуризация массивов
  */
 
-// const rgb = [255, 100, 200, 100, 235, 623, 45, 6, 783, 1];
+// const rgb = [255, 100, 200];
 
-// const [red, , blue, ...args] = rgb;
-
-// let [x1, x2, ...rest] = '123234';
-// console.log('x1', x1);
-// console.log('x2', x2);
-// console.log(rest);
+// ============================
 
 // const authors = {
 //   kiwi: 4,
