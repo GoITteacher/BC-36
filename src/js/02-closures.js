@@ -9,11 +9,11 @@
 */
 
 function myFoo(y) {
-    function test(x) {
-        console.log(y + x);
-    }
+  function test(x) {
+    console.log(y + x);
+  }
 
-    return test;
+  return test;
 }
 
 const resultFunction1 = myFoo(200);
