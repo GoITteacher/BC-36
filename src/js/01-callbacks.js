@@ -7,10 +7,6 @@
  *   или возвращает функцию как результат своей работы называется «функцией высшего порядка»
  */
 
-function kailyard(flag, callback1, callback2) {}
-
-//kailyard(false, b, z);
-
 /*
  * функция doMath(a, b, callback)
  */
