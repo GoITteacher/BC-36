@@ -8,6 +8,15 @@
 / 
 */
 
+// function myFoo() {
+//   return function (x, y) {
+//     console.log('x+y=', x + y);
+//   };
+// }
+
+// const res = myFoo();
+// res(2, 5);
+
 function myFoo(y) {
   function test(x) {
     console.log(y + x);
@@ -20,9 +29,10 @@ const resultFunction1 = myFoo(200);
 const resultFunction2 = myFoo(100);
 
 resultFunction1(10);
-resultFunction1(20);
-resultFunction1(30);
-
 resultFunction2(10);
+
+resultFunction1(20);
 resultFunction2(20);
+
+resultFunction1(30);
 resultFunction2(30);

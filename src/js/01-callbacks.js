@@ -7,13 +7,62 @@
  *   или возвращает функцию как результат своей работы называется «функцией высшего порядка»
  */
 
+/* function foo(len, callback) {
+  for (let i = 0; i < len; i++) {
+    callback();
+  }
+}
+
+function x() {
+  console.log('Саджаю');
+}
+
+function y() {
+  console.log('Поливаю');
+}
+
+function z() {
+  console.log('Збираю');
+}
+
+foo(10, x);
+
+foo(10, y);
+foo(10, y);
+foo(10, y);
+
+foo(10, z); */
+
 /*
  * функция doMath(a, b, callback)
  */
 
-function doMath(a, b, callback) {}
+/* function doMath(a, b, callback) {
+  const res = callback(a, b);
+  console.log(res);
+}
 
-//doMath(5, 5, pow);
+function multiply(x, y) {
+  return x * y;
+}
+
+function sum(x, y) {
+  return x + y;
+}
+
+function pow1(x, y) {
+  if (x < 10) return x ** y;
+
+  return 0;
+}
+
+function pow2(x, y) {
+  if (x > 10) return x ** y;
+
+  return 0;
+}
+
+doMath(40, 5, pow1); */
 
 /*
  * Отложенный вызов: регистрация событий
@@ -22,27 +71,43 @@ function doMath(a, b, callback) {}
 // const buttonRef = document.querySelector('.js-button');
 
 // function handleBtnClick() {
-//     console.log('Callback');
+//   console.log('Callback');
 // }
 
 // buttonRef.addEventListener('click', handleBtnClick);
+
+// buttonRef.addEventListener('click', e => {});
 
 /*
  * Отложенный вызов: интервалы
  */
 
-function callback() {
-  console.log('Через 2 секунды внутри колбека в таймауте');
-}
+// function callback() {
+//   console.log('Через 2 секунды внутри колбека в таймауте');
+// }
 
 // console.log('В коде перед таймаутом');
 
-// setTimeout(function () {
-//     console.log('test');
-// }, 2000);
+// setTimeout(()=>{
+
+// }, 5000);
 
 // console.log('В коде после таймаута');
 
 // ================================================
 
-const array = [1, 2, 3, 10, 5, 6, 7, 8];
+/* function foo(x, callback1, callback2) {
+  callback2();
+  x();
+  callback1();
+}
+
+foo(
+  function () {
+    console.log(0);
+  },
+
+  function () {
+    console.log(1);
+  },
+); */
