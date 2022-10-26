@@ -10,10 +10,6 @@
 
 let array = [-1, -6, -1, -6, -1, -6, -1, -6, 1];
 
-let isPositiveArray = array.every((value, index, array) => {
-  return value >= 0;
-});
-
 //console.log(isPositiveArray);
 
 /*
@@ -24,9 +20,5 @@ let isPositiveArray = array.every((value, index, array) => {
  - Повертає false, якщо жоден елемент масиву не задовольняє умову.
  - Перебирання масиву припиняється, якщо колбек повертає true.
 */
-
-let isPositive = array.some((value, index, array) => {
-  return value >= 0;
-});
 
 //console.log(isPositive);

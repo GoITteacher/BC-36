@@ -1,17 +1,5 @@
 function sortByValueAndIndex(array) {
-  return array
-    .map((value, index) => {
-      return {
-        original: value,
-        forSortingValue: value * (index + 1),
-      };
-    })
-    .sort((a, b) => {
-      return a.forSortingValue - b.forSortingValue;
-    })
-    .map(value => {
-      return value.original;
-    });
+  return array;
 }
 
 let array = [1, 2, 5, 1, 7, 9, 4, 1];

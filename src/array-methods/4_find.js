@@ -23,9 +23,4 @@ let users = [
   },
 ];
 
-// const findPhoneNumber = '+280996161';
-// let findUser = users.find(user => {
-//   return user.phone === findPhoneNumber;
-// });
-
 // console.table(findUser);

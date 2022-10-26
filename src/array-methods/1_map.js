@@ -8,16 +8,4 @@
 */
 // let array = [1, 6, 1, 5, 8, 2, 1];
 
-// let newArray = array.map((value, index, array) => {
-//   if (index > 0) {
-//     value += array[index - 1];
-//   }
-
-//   if (index < array.length - 1) {
-//     value += array[index + 1];
-//   }
-
-//   return value;
-// });
-
 // console.table(newArray);
