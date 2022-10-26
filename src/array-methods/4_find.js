@@ -23,4 +23,6 @@ let users = [
   },
 ];
 
-// console.table(findUser);
+const findUser = users.find(value => value.name === '123');
+
+console.table(findUser);

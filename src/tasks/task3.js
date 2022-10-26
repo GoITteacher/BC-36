@@ -1,4 +1,8 @@
-function sortReindeer(reindeerNames) {}
+function sortReindeer(reindeerNames) {
+  return reindeerNames.sort((a, b) => {
+    return a.split(' ')[1].localeCompare(b.split(' ')[1]);
+  });
+}
 
 let array = [
   'Dasher Tonoyan',
@@ -11,4 +15,4 @@ let array = [
   'Blitzen Claus',
 ];
 
-sortReindeer(array);
+console.log(sortReindeer(array));

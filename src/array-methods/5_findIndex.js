@@ -27,8 +27,6 @@
 
 let str = ['Roman', 'Anatoliy', 'Anatoliy', 'Anatoliy', 'Anatoliy'];
 
-let find = str.findIndex(value => {
-  return value === 'Anatoliy';
-});
+const find = str.findIndex(value => value === 'Anatoliy123');
 
-// console.log(find);
+console.log(find);

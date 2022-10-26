@@ -10,6 +10,10 @@
 
 */
 
-// let array = [1, 3, 56, 1, 5, 78, 2, 6];
+let array = [1, 3, 2, 1, 4, 78, 2, 7];
 
-// console.log(filteredArray);
+const min = 3;
+const filteredArray = array.filter((value, index) => value === index);
+
+console.log(array);
+console.log(filteredArray);

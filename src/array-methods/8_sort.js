@@ -90,4 +90,20 @@ let cars = [
   },
 ];
 
-// console.log(res);
+// function compareFunction(a, b) {
+//   return a.model.localeCompare(b.model);
+// }
+
+// const res = cars.sort(compareFunction);
+
+// // const res = cars.sort((b, a) => {
+// //   return a.amount - b.amount;
+// // });
+
+// console.table(res);
+
+// const arr = [1, 1, 3, 5, 5, 7, 2, 6, 43, 3, 0, 8, 2];
+
+// arr.sort((a, b) => a - b);
+
+// console.log(arr);

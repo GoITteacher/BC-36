@@ -8,9 +8,10 @@
  - Перебирання масиву припиняється, якщо колбек повертає false.
 */
 
-let array = [-1, -6, -1, -6, -1, -6, -1, -6, 1];
-
-//console.log(isPositiveArray);
+// let array = [-1, -6, -1, -6, -1, -6, -1, -6, -1];
+// const isPositiveArray = array.every(value => value > 0);
+// const isNegativeArray = array.every(value => value < 0);
+// console.log(isNegativeArray);
 
 /*
     SOME
@@ -21,4 +22,12 @@ let array = [-1, -6, -1, -6, -1, -6, -1, -6, 1];
  - Перебирання масиву припиняється, якщо колбек повертає true.
 */
 
-//console.log(isPositive);
+// let array = [-1, -6, -1, -6, 1, -6, -1, -6, -1];
+
+// const isPositive = array.some(value => {
+//   console.log(value);
+
+//   return value > 0;
+// });
+
+// console.log(isPositive);

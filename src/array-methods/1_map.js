@@ -6,6 +6,28 @@
  - Повертає новий масив однакової довжини.
 
 */
-// let array = [1, 6, 1, 5, 8, 2, 1];
+let array = [1, 6, 1, 5, 8, 2, 1];
 
-// console.table(newArray);
+let users = [
+  {
+    name: '1',
+    age: 23,
+  },
+  {
+    name: '2',
+    age: 23,
+  },
+  {
+    name: '3',
+    age: 23,
+  },
+];
+
+const newArray = users.map((value, index, array) => {
+  const copyObj = { ...value };
+  copyObj.index = index;
+  return value;
+});
+
+console.table(users);
+console.table(newArray);

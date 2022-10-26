@@ -6,31 +6,33 @@
 
 // */
 
-// let objs = [
-//   {
-//     name: "123",
-//     friend: ["Jonh1", "Marta1"],
-//   },
+let objs = [
+  {
+    name: '123',
+    friend: ['Jonh1', 'Marta1'],
+  },
 
-//   {
-//     name: "123",
-//     friend: ["Jonh2", "Marta3"],
-//   },
+  {
+    name: '123',
+    friend: ['Jonh2', 'Marta3'],
+  },
 
-//   {
-//     name: "123",
-//     friend: ["Jonh4", "Marta5"],
-//   },
+  {
+    name: '123',
+    friend: ['Jonh4', 'Marta5'],
+  },
 
-//   {
-//     name: "123",
-//     friend: ["Jonh6", "Marta7"],
-//   },
-//   {
-//     friend: 1312,
-//   },
-// ];
+  {
+    name: '123',
+    friend: ['Jonh6', 'Marta7'],
+  },
+  {
+    friend: 1312,
+  },
+];
 
-let array = [[2, 6], [1, [[5]], 8], [2, [1]], [23], 61, 56];
+const res = objs.flatMap((value, index, array) => {
+  return value.friend;
+});
 
-// console.log(result);
+console.log(res);
