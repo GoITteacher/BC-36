@@ -4,4 +4,21 @@
     - mult() - перемножает сохранённые значения и возвращает результат.
 */
 
-const calculator = {};
+const calculator = {
+  read(a, b) {
+    this.a = a;
+    this.b = b;
+  },
+
+  add() {
+    return this.a + this.b;
+  },
+  mult() {
+    return this.a * this.b;
+  },
+};
+
+calculator.read(10, 20);
+
+console.log(calculator.add());
+console.log(calculator.mult());
