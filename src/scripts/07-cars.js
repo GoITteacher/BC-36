@@ -1,5 +1,5 @@
 let myBtn = document.querySelector('#testButton');
-let list = document.querySelector('.collection-item');
+let table = document.querySelector('.js-collection-item');
 
 const cars = [
   {
@@ -83,3 +83,22 @@ const cars = [
     onSale: false,
   },
 ];
+
+const tableBody = table.lastElementChild;
+
+let markup = '';
+
+cars.forEach(element => {
+  markup += `
+            <tr>
+                <td>${element.make}</td>
+                <td>${element.model}</td>
+                <td>${element.type}</td>
+                <td>${element.amount}</td>
+                <td>${element.price}</td>
+                <td>${element.onSale}</td>
+            </tr>
+  `;
+});
+
+tableBody.innerHTML = markup;

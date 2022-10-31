@@ -1,10 +1,5 @@
 let myBtn = document.querySelector('#testButton');
 let list = document.querySelector('ul');
-let liItem1 = list.querySelector('li.active');
-let liItem2 = list.querySelector(':scope > li.active');
-
-console.log(liItem1);
-console.log(liItem2);
 
 const callback = () => {};
 
@@ -23,3 +18,17 @@ elem.previousElementSibling - вибере вузол-елемент «злів�
 elem.nextSibling - вибере елемент «праворуч» від elem (його наступного сусіда)
 elem.nextElementSibling - вибере вузол-елемент «праворуч» від elem (його наступного сусіда).
 */
+
+// console.log(list.parentNode);
+// console.log(list.childNodes);
+// console.log(list.children);
+
+// console.log(list.firstChild);
+// console.log(list.firstElementChild);
+
+// console.log(list.lastChild);
+// console.log(list.lastElementChild);
+
+// console.log(list.firstElementChild.nextElementSibling);
+
+// console.log(list.lastElementChild.nextElementSibling);

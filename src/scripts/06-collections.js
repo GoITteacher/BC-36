@@ -10,3 +10,12 @@ myBtn.addEventListener('click', () => {});
  - Додавання
  - insertAdjacentHTML
 */
+
+let res = '';
+for (let i = 0; i < 10; i++) {
+  res += `<li>TestValue ${i}</li>`;
+}
+
+let where = 'afterbegin';
+
+list.insertAdjacentHTML(where, res);

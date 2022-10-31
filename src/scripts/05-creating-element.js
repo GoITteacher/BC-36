@@ -10,6 +10,13 @@ myBtn.addEventListener('click', onBtnClick);
 document.createElement(tagName);
 */
 
+const arr = [];
+for (let i = 0; i < 10; i++) {
+  const elem = document.createElement('li');
+  elem.textContent = i;
+  arr.push(elem);
+}
+
 /* 
     Додавання
     - element.append(el1, el2, ...) - додає один або декілька елементів після всіх дітей елемента element.
@@ -18,17 +25,16 @@ document.createElement(tagName);
     - element.before(el1, el2, ...) - додає один або декілька елементів перед елементом element.
 */
 
+list.append(arr[0], arr[5], arr[1]);
+// list.prepend(arr[0], arr[5], arr[6]);
+
+// list.before(arr[0], arr[3]);
+
 /* 
 Видалення
 elem.remove();
-
-let ulItem = document.createElement("ul");
-for (let i = 0; i < 5; i++) {
-  let liItem = document.createElement("li");
-  liItem.textContent = `Test - ${i}`;
-  ulItem.append(liItem);
-}
-
-list.parentElement.append(ulItem);
-list.remove();
 */
+
+arr[0].remove();
+arr[5].remove();
+arr[1].remove();

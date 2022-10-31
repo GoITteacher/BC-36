@@ -1,9 +1,7 @@
 let myBtn = document.querySelector('#testButton');
 let listItem = document.querySelector('.js-list');
 
-const callback = () => {};
-
-//myBtn.addEventListener('click', callback);
+// myBtn.addEventListener('click', callback);
 
 /* 
 У властивості classList зберігається об'єкт з методами для роботи з класами елемента.
@@ -15,6 +13,20 @@ elem.classList.toggle(cls) - якщо відсутній клас cls, то до
 elem.classList.replace(oldClass, newClass) - замінює існуючий клас oldClass на вказаний newClass.
 */
 
+// console.log(listItem);
+
+// console.log(listItem.classList.contains('li-item'));
+
+// listItem.classList.add('test1', 'test2', 'test3');
+
+// listItem.classList.remove('test2', 'test3', 'test1');
+
+// listItem.children[0].classList.toggle('blue');
+
+// listItem.children[0].classList.replace('blue', 'tomato');
+
 /* 
 Властивість style
 */
+listItem.style.width = '';
+console.log();
