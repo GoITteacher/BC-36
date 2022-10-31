@@ -6,10 +6,7 @@ let liItem2 = list.querySelector(':scope > li.active');
 console.log(liItem1);
 console.log(liItem2);
 
-const callback = () => {
-  const elem = list.firstElementChild;
-  console.log(elem.closest('li'));
-};
+const callback = () => {};
 
 myBtn.addEventListener('click', callback);
 

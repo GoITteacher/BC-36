@@ -17,14 +17,24 @@
     <table class="collection-item">  
         <thead>
             <tr>
-                awdawdawd
                 <th>Производитель</th>
                 <th>Марка</th>
                 <th>Тип</th>
                 <th>Количество</th>
-                <th>Цена</th> 
+                <th>Цена</th>
+                <th>В продаже</th>
             </tr>
         </thead>
+        <tbody>
+            <tr>
+                <td>${element.make}</td>
+                <td>${element.model}</td>
+                <td>${element.type}</td>
+                <td>${element.amount}</td>
+                <td>${element.price}</td>
+                <td>${element.onSale}</td>
+            </tr>
+        </tbody>
     </table>
 
     <hr>

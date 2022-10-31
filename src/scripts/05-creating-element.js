@@ -1,9 +1,7 @@
 let myBtn = document.querySelector('#testButton');
 let list = document.querySelector('.usernames');
 
-const onBtnClick = () => {
-  list.remove();
-};
+const onBtnClick = () => {};
 
 myBtn.addEventListener('click', onBtnClick);
 
