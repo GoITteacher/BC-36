@@ -8,3 +8,24 @@
  */
 
 const boxRef = document.querySelector('.js-box');
+
+// boxRef.addEventListener('mouseenter', () => {
+//   console.log('mouseenter');
+// });
+
+// boxRef.addEventListener('mouseleave', () => {
+//   console.log('mouseleave');
+// });
+
+// boxRef.addEventListener('mouseover', () => {
+//   console.log('mouseover');
+// });
+
+// boxRef.addEventListener('mouseout', () => {
+//   console.log('mouseout');
+// });
+
+let counter = 0;
+boxRef.addEventListener('mousemove', e => {
+  console.log(e);
+});
