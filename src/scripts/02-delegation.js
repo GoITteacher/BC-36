@@ -3,12 +3,13 @@ let refs = {
 };
 
 refs.firstBoxElem.addEventListener('click', e => {
-  const targetElem = e.target.closest('button');
+  if (e.target === e.currentTarget) return;
 
-  if (targetElem) {
-    console.log(
-      targetElem.textContent,
-      targetElem.closest('[data-group]').dataset.group,
-    );
+  const elem = e.target;
+  const box = elem.closest('div');
+  const buttonElem = elem.closest('button');
+
+  if (buttonElem) {
+    console.log(`${buttonElem.textContent.trim()} - ${box.dataset.group}`);
   }
 });

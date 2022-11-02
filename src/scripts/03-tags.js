@@ -2,42 +2,43 @@ let refs = {
   firstTagsList: document.querySelector('.tags-box[data-group="group-1"]'),
   secondTagsList: document.querySelector('.tags-box[data-group="group-2"]'),
 };
-let tagsList = [];
 
 refs.firstTagsList.addEventListener('click', e => {
-  if (e.target !== e.currentTarget) {
-    const target = e.target.closest('li');
-    const oldActiveLiElem = refs.firstTagsList.querySelector('.active');
-    if (oldActiveLiElem) {
-      oldActiveLiElem.classList.remove('active');
+  if (e.target.nodeName === 'DIV') return;
+
+  const liElem = e.target.closest('li');
+  if (liElem) {
+    const prevActiveLi = refs.firstTagsList.querySelector('.active');
+
+    if (prevActiveLi) {
+      prevActiveLi.classList.toggle('active');
     }
-    target.classList.add('active');
+
+    liElem.classList.add('active');
   }
 });
 
-refs.firstTagsList.addEventListener('focusin', e => {
-  const oldActiveLiElem = refs.firstTagsList.querySelector('.active');
-  if (oldActiveLiElem) {
-    oldActiveLiElem.classList.remove('active');
-  }
-  e.target.closest('li').classList.add('active');
-});
-
+const activeTags = [];
 refs.secondTagsList.addEventListener('click', e => {
-  if (e.target !== e.currentTarget) {
-    tagsList = [];
-    const target = e.target.closest('li');
-    target.classList.toggle('active');
-    const activeList = refs.secondTagsList.querySelectorAll(':scope > .active');
-    activeList.forEach(value => {
-      tagsList.push(value.children[0].dataset.value);
-    });
+  if (e.target.nodeName === 'DIV') return;
+
+  const liElem = e.target.closest('li');
+  if (liElem) {
+    liElem.classList.toggle('active');
+    // const tag = liElem.firstElementChild.textContent;
+    // if (liElem.classList.contains('active')) {
+    //   activeTags.add(tag);
+    // } else {
+    //   activeTags.delete(tag);
+    // }
   }
 });
 
-const sendData = () => {
-  console.log(tagsList);
-};
-
-document.getElementById();
-document.getElementsByClassName;
+function sendData() {
+  const activeLiElem = [
+    ...refs.secondTagsList.querySelectorAll('li.active'),
+  ].map(value => {
+    return value.firstElementChild.dataset.value;
+  });
+  console.log(activeLiElem);
+}

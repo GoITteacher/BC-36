@@ -14,37 +14,29 @@ let refs = {
 };
 
 refs.parrent.addEventListener('click', e => {
-  console.log(
-    `Target: ${e.target.dataset.value}`,
-    `CurrentTarget: ${e.currentTarget.dataset.value}\n\n`,
-  );
+  console.log('parrent');
+  count[1]++;
   e.stopPropagation();
+  console.log(count);
 });
 
 refs.child.addEventListener('click', e => {
-  console.log(
-    `Target: ${e.target.dataset.value}`,
-    `CurrentTarget: ${e.currentTarget.dataset.value}`,
-  );
+  console.log('child');
+  count[2]++;
+  e.stopPropagation();
+  console.log(count);
 });
 
 refs.descendant.addEventListener('click', e => {
-  console.log(1);
-  //e.stopImmediatePropagation();
+  console.log('descendant');
+  count[3]++;
+  e.stopPropagation();
+  console.log(count);
 });
 
-refs.descendant.addEventListener('click', e => {
-  console.log(2);
-  e.stopImmediatePropagation();
-});
+let count = [0, 0, 0, 0];
 
-refs.descendant.addEventListener('click', e => {
-  console.log(3);
-  //e.stopImmediatePropagation();
-});
-
-let COUNT_CLICK = 0;
-document.body.addEventListener('click', () => {
-  COUNT_CLICK++;
-  console.log(COUNT_CLICK);
+document.addEventListener('click', e => {
+  count[0]++;
+  console.log(count);
 });

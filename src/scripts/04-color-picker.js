@@ -1,5 +1,5 @@
 let colorPalette = [];
-const LENGTH = 5;
+const LENGTH = 100;
 
 function createPaletteItems() {
   const items = [];
@@ -34,6 +34,7 @@ function hexToRgb(hex) {
 }
 
 createPaletteItems();
+
 ////////////////////////////////////////////////////////////////////////////
 
 const refs = {
@@ -43,63 +44,58 @@ const refs = {
   backdropElem: document.querySelector('.js-backdrop'),
 };
 
-function loadColorPallet() {
-  let pallete = '';
-
-  pallete = colorPalette
-    .map(value => {
+function init() {
+  const markup = colorPalette
+    .map(({ hex, rgb }) => {
       return `
-    <li class="color-item">
-    <div class="color-footer">
-        <div>HEX: ${value.hex}</div>
-        <div>RGB: ${value.rgb}</div>
-        <div>
-        <button class="color-body" style="background-color:${value.hex};"></button> 
-        </div>
-    </div>
-    <button class="color-body" style="background-color:${value.hex};"></button>
-  </li>
+<li class="color-item">
+  <div class="color-footer">
+      <div>HEX:${hex}</div>
+      <div>RGB:${rgb}</div>
+      <div>
+      <button class="color-body" style="background-color:${hex};"></button> 
+      </div>
+  </div>
+</li>
     `;
     })
     .join('');
 
-  refs.itemList.innerHTML = pallete;
-}
-loadColorPallet();
+  console.log(markup);
 
-('div > li');
+  refs.itemList.innerHTML = markup;
+}
+init();
+
 refs.itemList.addEventListener('click', e => {
-  if (e.target !== e.currentTarget) {
-    let targetBtn = e.target.closest('li').querySelector(':scope > button');
-    let color = targetBtn.style.backgroundColor;
-    refs.modalElement.style.backgroundColor = color;
-    document.body.classList.add('show-modal');
-  }
+  if (e.target.nodeName !== 'BUTTON') return;
+  document.body.classList.add('show-modal');
+  refs.modalElement.style.backgroundColor = e.target.style.backgroundColor;
 });
 
 refs.backdropElem.addEventListener('click', e => {
-  if (e.target === e.currentTarget) {
+  if (e.target === e.currentTarget)
     document.body.classList.remove('show-modal');
-  }
 });
-refs.btnReloadColor.addEventListener('click', call);
-function call() {
-  console.log('tesst');
+
+refs.btnReloadColor.addEventListener('click', () => {
   createPaletteItems();
-  loadColorPallet();
-}
+  init();
+});
 
 ////////////////////////////////////////////////////////////////////////////
 
 /* 
 nodeName
 <li class="color-item">
-    <button class="color-body style="background-color:...;"></button>
-    <div class="color-footer">
-        <div>HEX: ....</div>
-        <div>RGB: ....</div>
-        <div></div>
-    </div>
+  <div class="color-footer">
+      <div>HEX: </div>
+      <div>RGB: </div>
+      <div>
+      <button class="color-body" style="background-color:;"></button> 
+      </div>
+  </div>
+  <button class="color-body" style="background-color:;"></button>
 </li>
 
 */
