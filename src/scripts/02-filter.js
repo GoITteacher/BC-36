@@ -13,8 +13,8 @@ let list = [
 
 let filterElem = document.querySelector('.js-filter');
 let listElem = document.querySelector('.js-list');
-showArr(list);
 
+showArr(list);
 function showArr(arr) {
   listElem.innerHTML = arr
     .map(item => {
@@ -22,3 +22,15 @@ function showArr(arr) {
     })
     .join('');
 }
+
+function onInputChange(e) {
+  const filterValue = e.target.value.toLowerCase();
+
+  const filteredList = list.filter(value => {
+    return value.label.toLowerCase().indexOf(filterValue) === 0;
+  });
+
+  showArr(filteredList);
+}
+
+filterElem.addEventListener('input', _.debounce(onInputChange, 300));
