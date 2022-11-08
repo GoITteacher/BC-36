@@ -9,8 +9,16 @@
   <body>
     <p><a href="index.html">На главную</a></p>
 
-    <div class="palette js-palette"></div>
+    <div class="palette js-palette">
+      <div class="color-card">
+        <div class="color-swatch" data-hex="{{hex}}" data-rgb="{{rgb}}" style=""></div>
+        <div class="color-meta">
+          <p>HEX: {{hex}}</p>
+          <p>RGB: {{rgb}}</p>
+        </div>
+      </div>
+    </div>
 
-    <script src="js/03-colorpicker.js"></script>
+    <script src="js/03-colorpicker.js"  type="module"></script>
   </body>
 </html>
