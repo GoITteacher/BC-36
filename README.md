@@ -18,6 +18,7 @@
 - Session Storage
 
 ---
+
 ## Шаблонизация
 
 - [Handlebars](https://handlebarsjs.com/)
@@ -26,3 +27,10 @@
 
 - `npm install --save-dev parcel-plugin-handlebars-precompile`
 - `import templateFunction from './template.hbs'`;
+
+- ```json
+  "transformers": {
+      "*.hbs": ["parcel-transformer-hbs"]
+  }
+  ```
+- `parcel-transformer-hbs`
