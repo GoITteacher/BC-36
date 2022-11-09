@@ -4,21 +4,36 @@ import '../css/common.css';
  * Метод window.setTimeout(callback, delay, args)
  */
 
-const listId = [];
+// console.log('start');
 
-for (let i = 0; i < 10; i++) {
-  const id = setTimeout(() => {
-    console.log(i);
-  }, i * 1000);
+// function callback(str1, str2) {
+//   console.log(str1, str2);
+// }
 
-  listId.push(id);
-}
+// let result = setTimeout(callback, 5000, 'Hello', 'World');
+
+// console.log(result);
+// console.log('end');
 
 /*
  * Очистка таймаута с clearTimeout(timeoutId)
  */
 
-console.log(listId);
-const idForDelete = listId[5];
+// let result = setTimeout(
+//   (s1, s2) => {
+//     console.log(s1, s2);
+//   },
+//   5000,
+//   'Hello',
+//   'World',
+// );
 
-clearTimeout(idForDelete);
+// clearTimeout(result);
+setTimeout(() => {
+  for (let i = 1; i <= 10; i++) {
+    console.log(i);
+    // setTimeout(() => {
+    //   console.log(i);
+    // }, i * 1000);
+  }
+}, 5000);

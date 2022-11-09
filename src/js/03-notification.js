@@ -7,29 +7,31 @@ import '../css/common.css';
  * - Не забываем чистить таймер
  */
 
-const NOTIFICATION_DELAY = 3000;
-let timeoutId = null;
-
 const refs = {
   notification: document.querySelector('.js-alert'),
 };
-
-setTimeout(showNotification, 5000);
-
-timeoutId = setTimeout(hideNotification, 10000);
 /*
  * Функции
  */
-
-function showNotification() {
+function showNotofocation() {
   refs.notification.classList.add('is-visible');
+
+  let idTimeout = setTimeout(() => {
+    hideNotification();
+    console.log('Hide');
+  }, 5000);
+
+  function hideNotification() {
+    refs.notification.classList.remove('is-visible');
+    refs.notification.removeEventListener('click', callback);
+  }
+
+  function callback() {
+    hideNotification();
+    clearTimeout(idTimeout);
+  }
+
+  refs.notification.addEventListener('click', callback);
 }
 
-function hideNotification() {
-  refs.notification.classList.toggle('is-visible');
-}
-
-refs.notification.addEventListener('click', () => {
-  clearTimeout(timeoutId);
-  hideNotification();
-});
+setTimeout(showNotofocation, 3000);

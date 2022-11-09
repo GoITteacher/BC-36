@@ -6,34 +6,32 @@ const refs = {
   clockface: document.querySelector('.js-clockface'),
 };
 
-class Secoundomir {
+class Stopwatch {
   initTime = 0;
   isActive = false;
   intervalId = null;
   time = 0;
   onTick;
 
-  constructor({ onTick }) {
+  constructor(onTick) {
     this.initTime = Date.now();
     this.onTick = onTick;
   }
 
   start() {
     if (this.isActive) return;
-
-    this.initTime += this.time;
-
+    this.initTime = Date.now();
+    this.isActive = true;
     this.intervalId = setInterval(() => {
       const currentTime = Date.now();
-      this.time = currentTime - this.initTime;
+      const time = currentTime - this.initTime + this.time;
 
-      this.onTick(this.getTimeComponents(this.time));
+      this.onTick(this.getTimeComponents(time));
     }, 1000);
-
-    this.isActive = true;
   }
 
   stop() {
+    this.time = Date.now() - this.initTime + this.time;
     clearInterval(this.intervalId);
     this.isActive = false;
   }
@@ -47,19 +45,26 @@ class Secoundomir {
 
     return { hours, mins, secs };
   }
-
   pad(value) {
     return String(value).padStart(2, '0');
   }
 }
 
-const timer = new Secoundomir({
-  onTick: updateClockface,
-});
+const stopwatch = new Stopwatch(onTick);
 
-refs.startBtn.addEventListener('click', timer.start.bind(timer));
-refs.stopBtn.addEventListener('click', timer.stop.bind(timer));
-
-function updateClockface({ hours, mins, secs }) {
+function onTick({ hours, mins, secs }) {
   refs.clockface.textContent = `${hours}:${mins}:${secs}`;
 }
+
+refs.startBtn.addEventListener('click', () => {
+  stopwatch.start();
+});
+
+refs.stopBtn.addEventListener('click', () => {
+  stopwatch.stop();
+});
+
+/* 
+
+
+*/

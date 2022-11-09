@@ -4,32 +4,42 @@ import BSN from 'bootstrap.native';
 const refs = {
   modal: document.querySelector('#subscription-modal'),
   subscribeBtn: document.querySelector('button[data-subscribe]'),
+  hideBtn: document.querySelector('.js-btn-hide'),
 };
-const PROMPT_DELAY = 3000;
-const MAX_PROMPT_ATTEMPTS = 3;
-let promptCounter = 0;
-let hasSubscribed = false;
 const modal = new BSN.Modal('#subscription-modal');
 
-openModal();
-
-refs.modal.addEventListener('hide.bs.modal', openModal);
-refs.subscribeBtn.addEventListener('click', onSubscribeBtnClick);
+const PROMPT_DELAY = 1000;
+const MAX_PROMPT_ATTEMPTS = 5;
+let promptCounter = 0;
+let hasSubscribed = false;
 
 function openModal() {
   if (promptCounter === MAX_PROMPT_ATTEMPTS || hasSubscribed) {
-    console.log('Максимальное кол-во надоеданий или подписался');
     return;
   }
 
+  function callback1() {
+    modal.hide();
+  }
+  function callback2() {
+    hasSubscribed = true;
+    modal.hide();
+  }
+
   setTimeout(() => {
-    console.log('Открываем надоедалку');
     modal.show();
-    promptCounter += 1;
+    promptCounter++;
+
+    refs.hideBtn.addEventListener('click', callback1);
+    refs.subscribeBtn.addEventListener('click', callback2);
+
+    refs.modal.addEventListener('hide.bs.modal', function modalHide() {
+      refs.hideBtn.removeEventListener('click', callback1);
+      refs.subscribeBtn.removeEventListener('click', callback2);
+      refs.modal.removeEventListener('hide.bs.modal', modalHide);
+      openModal();
+    });
   }, PROMPT_DELAY);
 }
 
-function onSubscribeBtnClick() {
-  hasSubscribed = true;
-  modal.hide();
-}
+openModal();
