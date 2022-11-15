@@ -1,8 +1,8 @@
 import '../css/common.css';
 import { refs } from './modules/refs.js';
 import { getQuotes } from './modules/quotesAPI';
-import quotesTemplate from '../templates/quotes-card';
-import heroesTemplate from '../templates/hero-card';
+import quotesTemplate from '../templates/quotes-card.hbs';
+import heroesTemplate from '../templates/hero-card.hbs';
 import { getHero } from './modules/heroesAPI';
 
 // =======================================================
